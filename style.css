@@ -193,6 +193,71 @@ header {
   width: 100%;
   border-radius: 10px;
 }
+/* Packages Section */
+.packages {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.packages h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #0078ff;
+}
+
+.package-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.package-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.3s, border 0.3s;
+  border-top: 5px solid #0078ff;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+  border-color: #005fcc;
+}
+
+.package-card h3 {
+  font-size: 1.5rem;
+  color: #0078ff;
+}
+
+.package-card h4 {
+  font-size: 1.3rem;
+  margin: 15px 0;
+  color: #111;
+}
+
+.package-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.package-card ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.order-btn {
+  background: #0078ff;
+}
+
+.order-btn:hover {
+  background: #005fcc;
+}
 
 /* Contact Section */
 .contact {
@@ -208,6 +273,7 @@ header {
 .whatsapp-btn:hover {
   background: #1DA851;
 }
+
 
 /* Footer */
 footer {
