@@ -11,20 +11,19 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">MyPortfolio</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <a href="#packages" class="btn order-header-btn">Order</a>
-
-    </nav>
-  </header>
+<header>
+  <nav class="navbar">
+    <div class="logo">MyPortfolio</div>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-btn">Home</a></li>
+      <li><a href="#about" class="nav-btn">About</a></li>
+      <li><a href="#projects" class="nav-btn">Projects</a></li>
+      <li><a href="#skills" class="nav-btn">Skills</a></li>
+      <li><a href="#packages" class="nav-btn">Packages</a></li>
+      <li><a href="#contact" class="nav-btn">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
@@ -36,17 +35,64 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <div class="about-content">
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <div class="about-content">
+    <div class="about-img">
       <img src="profile.jpg" alt="Profile Picture">
-      <p>
-        I’m a passionate web developer with experience in building modern, responsive websites. 
-        I love creating clean and user-friendly designs that bring ideas to life.
-      </p>
     </div>
-  </section>
+    <div class="about-text">
+      <h3>Hello! I'm Emaan 👋</h3>
+      <p>
+        I’m a passionate <span class="highlight">Web Developer</span> with experience in creating 
+        modern, responsive and user-friendly websites. I enjoy turning complex problems into 
+        simple, beautiful and intuitive solutions.
+      </p>
+      <p>
+        With skills in <strong>HTML, CSS, JavaScript</strong> and modern frameworks, I aim to build 
+        websites that are not only visually appealing but also deliver great performance.
+      </p>
+      <div class="about-details">
+      
+        <p><strong>📧 Email:</strong> manomajid999@gmail.com</p>
+        <p><strong>📱 Phone:</strong> 03215811901</p>
+      </div>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+  </div>
+</section>
+<!-- Skills Section -->
+<section id="skills" class="skills">
+  <h2>My Skills</h2>
 
+  <div class="skill">
+    <p>HTML <span class="skill-value">0%</span></p>
+    <div class="progress-bar">
+      <div class="progress" data-progress="100"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <p>CSS <span class="skill-value">0%</span></p>
+    <div class="progress-bar">
+      <div class="progress" data-progress="95"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <p>JavaScript <span class="skill-value">0%</span></p>
+    <div class="progress-bar">
+      <div class="progress" data-progress="85"></div>
+    </div>
+  </div>
+
+  <div class="skill">
+    <p>React <span class="skill-value">0%</span></p>
+    <div class="progress-bar">
+      <div class="progress" data-progress="80"></div>
+    </div>
+  </div>
+</section>
   <!-- Projects Section -->
   <section id="projects" class="projects">
     <h2>My Projects</h2>
@@ -151,5 +197,38 @@
       loop: true
     });
   </script>
+// Animate progress bars and percentages
+function animateSkills() {
+  const skills = document.querySelectorAll(".progress");
+  const values = document.querySelectorAll(".skill-value");
+
+  skills.forEach((bar, index) => {
+    const value = bar.getAttribute("data-progress");
+    bar.style.width = value + "%";
+
+    let count = 0;
+    const target = parseInt(value);
+    const counter = setInterval(() => {
+      if (count >= target) {
+        clearInterval(counter);
+      } else {
+        count++;
+        values[index].innerText = count + "%";
+      }
+    }, 20);
+  });
+}
+
+window.addEventListener("scroll", () => {
+  const section = document.querySelector(".skills");
+  const position = section.getBoundingClientRect().top;
+  const screenPos = window.innerHeight / 1.3;
+
+  if (position < screenPos) {
+    animateSkills();
+  }
+});
+</script>
+
 </body>
 </html>
