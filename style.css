@@ -308,6 +308,53 @@ header {
   color: #0078ff;
   font-weight: bold;
 }
+/* Skills Section */
+.skills {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #0078ff;
+}
+
+.skill {
+  margin-bottom: 25px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skill p {
+  margin: 0 0 8px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill-value {
+  color: #0078ff;
+  font-weight: bold;
+}
+
+.progress-bar {
+  width: 100%;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 14px;
+}
+
+.progress {
+  height: 100%;
+  width: 0;
+  background: #0078ff;
+  transition: width 2s ease-in-out;
+}
 
 .progress-bar {
   width: 100%;
