@@ -59,6 +59,20 @@ header {
   font-size: 1.4rem;
   color: #0078ff;
 }
+/* Navbar Buttons */
+.nav-links a {
+  background: #0078ff;
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  background: #005fcc;
+}
 
 /* All header buttons same style */
 .nav-links {
