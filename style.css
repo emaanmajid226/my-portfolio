@@ -572,3 +572,11 @@ body {
 .btn:hover {
   background: #0ea5e9;
 }
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #22c55e;
+  padding: 12px;
+  border-radius: 50px;
+}
