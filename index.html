@@ -1,285 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <!-- Typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <a href="#contact" class="btn">Hire Me</a>
-<a href="#projects" class="btn">View Work</a>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="https://chatgpt.com/s/m_69f39bb6de008191993a3c2e27887c2c/>
+<title>Emaan Majid — Web Developer & Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F9F6F0;
+    --dark: #1A1A18;
+    --accent: #C97B3A;
+    --accent-light: #F0E0CC;
+    --muted: #6B6B65;
+    --border: #E2DDD6;
+    --white: #FFFFFF;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 5%;
+    background: rgba(249,246,240,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: var(--serif); font-size: 1.2rem; color: var(--dark); text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  #home {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 7rem 5% 4rem;
+    gap: 4rem;
+  }
+  .hero-text { flex: 1; }
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); background: var(--accent-light);
+    padding: 0.35rem 0.9rem; border-radius: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-text h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+  .hero-text p {
+    font-size: 1.1rem; color: var(--muted);
+    max-width: 480px; margin-bottom: 2.5rem; line-height: 1.8;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--dark); color: var(--white);
+    padding: 0.85rem 2rem; border-radius: 2rem;
+    text-decoration: none; font-size: 0.9rem; font-weight: 500;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-outline {
+    border: 1.5px solid var(--dark); color: var(--dark);
+    padding: 0.85rem 2rem; border-radius: 2rem;
+    text-decoration: none; font-size: 0.9rem; font-weight: 500;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-photo { flex: 0 0 360px; }
+  .hero-photo img {
+    width: 100%; border-radius: 2rem;
+    aspect-ratio: 3/4; object-fit: cover;
+    border: 4px solid var(--white);
+    box-shadow: 12px 12px 0 var(--accent-light);
+  }
+
+  /* SECTION BASE */
+  section { padding: 6rem 5%; }
+  .section-label {
+    font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.2;
+    margin-bottom: 3rem;
+  }
+
+  /* ABOUT */
+  #about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-text p { color: var(--muted); margin-bottom: 1.25rem; font-size: 1.05rem; }
+  .about-info { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .about-info a { color: var(--accent); text-decoration: none; }
+  .about-info a:hover { text-decoration: underline; }
+  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+  .stat { text-align: center; padding: 1.5rem; background: var(--cream); border-radius: 1rem; }
+  .stat-num { font-family: var(--serif); font-size: 2.2rem; color: var(--dark); }
+  .stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 0.25rem; }
+
+  /* SKILLS */
+  #skills { background: var(--cream); }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .skill-item { }
+  .skill-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 500; }
+  .skill-bar { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .skill-fill {
+    height: 100%; border-radius: 3px;
+    background: var(--accent);
+    width: 0%;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* PROJECTS */
+  #projects { background: var(--white); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+  .project-card {
+    border: 1px solid var(--border); border-radius: 1.25rem;
+    overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+  .project-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; background: var(--accent-light); display: block; }
+  .project-img-placeholder {
+    width: 100%; aspect-ratio: 16/10;
+    background: var(--accent-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem;
+  }
+  .project-body { padding: 1.25rem 1.5rem 1.5rem; }
+  .project-tech { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+  .tech-tag {
+    font-size: 0.72rem; padding: 0.2rem 0.65rem;
+    border-radius: 2rem; background: var(--accent-light); color: var(--accent);
+    font-weight: 500; letter-spacing: 0.04em;
+  }
+  .project-body h3 { font-family: var(--serif); font-size: 1.2rem; margin-bottom: 0.5rem; }
+  .project-body p { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.25rem; }
+  .project-links { display: flex; gap: 1rem; }
+  .project-links a {
+    font-size: 0.85rem; font-weight: 500; text-decoration: none;
+    color: var(--dark); border-bottom: 1.5px solid var(--border);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .project-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* PACKAGES */
+  #packages { background: var(--cream); }
+  .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
+  .package-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 1.5rem; padding: 2rem;
+    transition: box-shadow 0.2s;
+  }
+  .package-card.featured {
+    background: var(--dark); color: var(--white);
+    border-color: var(--dark);
+  }
+  .package-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
+  .package-name { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+  .package-card.featured .package-name { color: rgba(255,255,255,0.6); }
+  .package-price { font-family: var(--serif); font-size: 2.5rem; margin-bottom: 1.75rem; }
+  .package-price span { font-size: 1rem; font-family: var(--sans); }
+  .package-features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+  .package-features li { font-size: 0.9rem; display: flex; gap: 0.6rem; align-items: flex-start; }
+  .check { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  .package-card.featured .check { color: #E8A86A; }
+  .package-card.featured .package-features li { color: rgba(255,255,255,0.85); }
+  .pkg-btn {
+    display: block; text-align: center; text-decoration: none;
+    padding: 0.85rem; border-radius: 2rem;
+    font-size: 0.9rem; font-weight: 500; transition: all 0.2s;
+    border: 1.5px solid var(--dark); color: var(--dark);
+  }
+  .pkg-btn:hover { background: var(--dark); color: var(--white); }
+  .package-card.featured .pkg-btn {
+    background: var(--accent); color: var(--white); border-color: var(--accent);
+  }
+  .package-card.featured .pkg-btn:hover { background: #b5692c; }
+
+  /* TESTIMONIALS */
+  #testimonials { background: var(--white); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+  .testimonial-card {
+    background: var(--cream); border-radius: 1.25rem;
+    padding: 2rem; position: relative;
+  }
+  .quote-mark {
+    font-family: var(--serif); font-size: 4rem; line-height: 1;
+    color: var(--accent); opacity: 0.25;
+    position: absolute; top: 1rem; right: 1.25rem;
+  }
+  .testimonial-text { font-size: 0.95rem; color: var(--dark); line-height: 1.75; margin-bottom: 1.5rem; }
+  .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+  .author-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--accent); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 0.85rem; flex-shrink: 0;
+  }
+  .author-name { font-weight: 500; font-size: 0.9rem; }
+  .author-role { font-size: 0.8rem; color: var(--muted); }
+  .stars { color: var(--accent); font-size: 0.85rem; margin-bottom: 1rem; letter-spacing: 2px; }
+
+  /* CONTACT */
+  #contact { background: var(--cream); }
+  .contact-inner {
+    max-width: 600px; background: var(--white);
+    border-radius: 2rem; padding: 3rem;
+    border: 1px solid var(--border);
+  }
+  .contact-inner p { color: var(--muted); margin-bottom: 2rem; }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem 1.25rem; border-radius: 0.875rem;
+    border: 1px solid var(--border); text-decoration: none;
+    color: var(--dark); font-size: 0.9rem; font-weight: 500;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .contact-link:hover { border-color: var(--accent); background: var(--accent-light); }
+  .contact-icon { font-size: 1.1rem; }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark); color: rgba(255,255,255,0.6);
+    text-align: center; padding: 2rem 5%;
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    #home { flex-direction: column-reverse; padding-top: 6rem; gap: 2rem; }
+    .hero-photo { flex: none; width: 100%; max-width: 320px; margin: 0 auto; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
 </head>
 <body>
-<header>
-  <nav class="navbar">
-    <div class="logo">MyPortfolio</div>
-    <ul class="nav-links">
-      <li><a href="#home" class="nav-btn">Home</a></li>
-      <li><a href="#about" class="nav-btn">About</a></li>
-      <li><a href="#projects" class="nav-btn">Projects</a></li>
-      <li><a href="#skills" class="nav-btn">Skills</a></li>
-      <li><a href="#packages" class="nav-btn">Packages</a></li>
-      <li><a href="#contact" class="nav-btn">Contact</a></li>
-    </ul>
-  </nav>
-</header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <section class="hero">
-  <h1>Hi, I'm Emaan 👋</h1>
-  <h2>Graphic Designer & Web Developer</h2>
-  <p>I create modern designs and responsive websites that help brands grow 🚀</p>
-  
-  <a href="#contact" class="btn">Hire Me</a>
-  <a href="#projects" class="btn">View Work</a>
+<nav>
+  <a class="nav-logo" href="#home">Emaan.</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-text">
+    <div class="hero-tag">Available for work</div>
+    <h1>Web Developer<br/>&amp; Graphic Designer</h1>
+    <p>I help small businesses and startups launch modern, high-performing websites that attract customers and grow their brand online.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Hire Me</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img
+      src="https://raw.githubusercontent.com/emaanmajid226/my-portfolio/main/profile.jpg"
+      alt="Emaan Majid"
+      onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Emaan+Majid&size=400&background=F0E0CC&color=C97B3A&font-size=0.35&bold=true';"
+    />
+  </div>
 </section>
-  </section>
 
-  <!-- About Section -->
-<section id="about" class="about">
-  <h2>About Me</h2>
-  <div class="about-content">
-    <div class="about-img">
-      <img src="profile.jpg" alt="Profile Picture">
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div>
+      <p class="section-label">About Me</p>
+      <h2 class="section-title">Turning ideas into digital experiences</h2>
     </div>
     <div class="about-text">
-      <h3>Hello! I'm Emaan 👋</h3>
-      <p>
-        I’m a passionate <span class="highlight">Web Developer</span> with experience in creating 
-        modern, responsive and user-friendly websites. I enjoy turning complex problems into 
-        simple, beautiful and intuitive solutions.
-      </p>
-      <p>
-        With skills in <strong>HTML, CSS, JavaScript</strong> and modern frameworks, I aim to build 
-        websites that are not only visually appealing but also deliver great performance.
-      </p>
-      <div class="about-details">
-      
-        <p><strong>📧 Email:</strong> manomajid999@gmail.com</p>
-        <p><strong>📱 Phone:</strong> 03215811901</p>
+      <p>I'm Emaan — a web developer and graphic designer based in Pakistan, specialising in building websites for <strong>small businesses, startups, and entrepreneurs</strong> who want a powerful online presence without the agency price tag.</p>
+      <p>From a local restaurant needing an online menu, to a startup launching their first product page — I bring clean design, responsive layouts, and real attention to detail to every project.</p>
+      <div class="about-info">
+        <span>📧 <a href="mailto:manomajid999@gmail.com">manomajid999@gmail.com</a></span>
+        <span>📱 <a href="https://wa.me/923215811901">+92 321 5811901</a></span>
+        <span>💻 <a href="https://github.com/emaanmajid226" target="_blank" rel="noopener">github.com/emaanmajid226</a></span>
       </div>
-      <a href="#projects" class="btn">View Projects</a>
+
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-num">25+</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">40+</div>
+          <div class="stat-label">Projects Done</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">2+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-<!-- Skills Section -->
-<section id="skills" class="skills">
-  <h2>My Skills</h2>
 
-  <div class="skill">
-    <p>HTML <span class="skill-value">0%</span></p>
-    <div class="progress-bar">
-      <div class="progress" data-progress="100"></div>
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label">My Skills</p>
+  <h2 class="section-title">What I work with</h2>
+  <div class="skills-grid">
+    <div class="skill-item">
+      <div class="skill-header"><span>HTML</span><span>95%</span></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
     </div>
-  </div>
-
-  <div class="skill">
-    <p>CSS <span class="skill-value">0%</span></p>
-    <div class="progress-bar">
-      <div class="progress" data-progress="95"></div>
+    <div class="skill-item">
+      <div class="skill-header"><span>CSS</span><span>90%</span></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
     </div>
-  </div>
-
-  <div class="skill">
-    <p>JavaScript <span class="skill-value">0%</span></p>
-    <div class="progress-bar">
-      <div class="progress" data-progress="85"></div>
+    <div class="skill-item">
+      <div class="skill-header"><span>JavaScript</span><span>75%</span></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
     </div>
-  </div>
-
-  <div class="skill">
-    <p>React <span class="skill-value">0%</span></p>
-    <div class="progress-bar">
-      <div class="progress" data-progress="80"></div>
+    <div class="skill-item">
+      <div class="skill-header"><span>React</span><span>60%</span></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-header"><span>Graphic Design</span><span>85%</span></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-header"><span>Responsive Design</span><span>92%</span></div>
+      <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
     </div>
   </div>
 </section>
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <h2>My Projects</h2>
-    <div class="project-cards">
-      <div class="card">
-        <img src="project1.jpg" alt="Project 1">
-        <h3>Project One</h3>
-        <p>A short description of this project.</p>
-      </div>
-      <div class="card">
-        <img src="project2.jpg" alt="Project 2">
-        <h3>Project Two</h3>
-        <p>A short description of this project.</p>
-      </div>
-      <div class="card">
-        <img src="project3.jpg" alt="Project 3">
-        <h3>Project Three</h3>
-        <p>A short description of this project.</p>
-      </div>
+
+
+<!-- PACKAGES -->
+<section id="packages">
+  <p class="section-label">Pricing</p>
+  <h2 class="section-title">Website Packages</h2>
+  <div class="packages-grid">
+
+    <div class="package-card">
+      <div class="package-name">Basic</div>
+      <div class="package-price"><span>USD </span>$150</div>
+      <ul class="package-features">
+        <li><span class="check">✓</span> Up to 3 pages</li>
+        <li><span class="check">✓</span> Responsive Design</li>
+        <li><span class="check">✓</span> Contact Form</li>
+        <li><span class="check">✓</span> Social Links</li>
+      </ul>
+      <a href="https://wa.me/923215811901" class="pkg-btn" target="_blank">Order Now</a>
     </div>
-  </section>
-    <section class="stats">
-  <div class="card">
-    <h2>25+</h2>
-    <p>Happy Clients 😊</p>
-  </div>
-  
-  <div class="card">
-    <h2>40+</h2>
-    <p>Projects Completed 💻</p>
-  </div>
-  
-  <div class="card">
-    <h2>2+</h2>
-    <p>Years Experience 🚀</p>
+
+    <div class="package-card featured">
+      <div class="package-name">Standard — Most Popular</div>
+      <div class="package-price"><span>USD </span>$300</div>
+      <ul class="package-features">
+        <li><span class="check">✓</span> Up to 5 pages</li>
+        <li><span class="check">✓</span> E-commerce ready</li>
+        <li><span class="check">✓</span> Contact Form</li>
+        <li><span class="check">✓</span> Social Links</li>
+        <li><span class="check">✓</span> Speed Optimised</li>
+      </ul>
+      <a href="https://wa.me/923215811901" class="pkg-btn" target="_blank">Order Now</a>
+    </div>
+
+    <div class="package-card">
+      <div class="package-name">Premium</div>
+      <div class="package-price"><span>USD </span>$500</div>
+      <ul class="package-features">
+        <li><span class="check">✓</span> Up to 10 pages</li>
+        <li><span class="check">✓</span> E-commerce + Blog</li>
+        <li><span class="check">✓</span> Custom Design</li>
+        <li><span class="check">✓</span> Social Links</li>
+        <li><span class="check">✓</span> Speed Optimised</li>
+        <li><span class="check">✓</span> 1 month support</li>
+      </ul>
+      <a href="https://wa.me/923215811901" class="pkg-btn" target="_blank">Order Now</a>
+    </div>
+
   </div>
 </section>
 
-  <!-- Contact Form -->
-  <form class="contact-form">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit" class="btn">Send Message</button>
-  </form>
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <p class="section-label">Client Reviews</p>
+  <h2 class="section-title">What clients say</h2>
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">Emaan built our bakery website from scratch in under two weeks. It looks stunning on mobile, and we've had customers tell us they found us because of the site. Highly recommend!</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">SR</div>
+        <div>
+          <div class="author-name">Simra Raza</div>
+          <div class="author-role">Owner, Sweet Crumbs Bakery</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">We needed a professional landing page for our startup launch and Emaan delivered exactly that — clean design, fast loading, and she actually listened to what we wanted. Great communicator throughout.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background:#3A7DC9;">AK</div>
+        <div>
+          <div class="author-name">Ahmed Khan</div>
+          <div class="author-role">Co-founder, LaunchPK</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">I was amazed by how quickly Emaan understood our brand. Our e-commerce store went live on time and on budget. Sales have been strong since day one. Would absolutely hire again.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar" style="background:#3AB87B;">FN</div>
+        <div>
+          <div class="author-name">Fatima Nawaz</div>
+          <div class="author-role">Founder, Noori Crafts</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
-  <section id="projects">
+
+<!-- CONTACT -->
 <section id="contact">
-<!-- Packages Section -->
-<section id="packages" class="packages">
-  <h2>Website Development Packages</h2>
-  <div class="package-cards">
-
-    <!-- Basic Package -->
-    <div class="package-card">
-      <h3>Basic Package</h3>
-      <div class="price">USD <span>$150</span></div>
-      <ul>
-        <li>✔ Up to 3 pages website</li>
-        <li>✔ Responsive Design</li>
-        <li>✔ Contact Form</li>
-        <li>✔ Social Links</li>
-      </ul>
-      <a href="https://wa.me/923215811901" target="_blank" class="btn order-btn">Order Now</a>
+  <p class="section-label">Get in Touch</p>
+  <h2 class="section-title">Let's work together</h2>
+  <div class="contact-inner">
+    <p>Have a project in mind? Whether you're a small business, a startup, or a freelancer looking for your first website — I'd love to hear from you.</p>
+    <div class="contact-links">
+      <a href="https://wa.me/923215811901" class="contact-link" target="_blank">
+        <span class="contact-icon">📱</span>
+        Chat on WhatsApp
+      </a>
+      <a href="mailto:manomajid999@gmail.com" class="contact-link">
+        <span class="contact-icon">📧</span>
+        manomajid999@gmail.com
+      </a>
+      <a href="https://github.com/emaanmajid226" class="contact-link" target="_blank">
+        <span class="contact-icon">💻</span>
+        github.com/emaanmajid226
+      </a>
     </div>
-
-    <!-- Standard Package -->
-    <div class="package-card">
-      <h3>Standard Package</h3>
-      <div class="price">USD <span>$300</span></div>
-      <ul>
-        <li>✔ Up to 5 pages website</li>
-        <li>✔ E-commerce</li>
-        <li>✔ Contact Form</li>
-        <li>✔ Social Links</li>
-        <li>✔ Optimized Speed</li>
-      </ul>
-      <a href="https://wa.me/923215811901" target="_blank" class="btn order-btn">Order Now</a>
-    </div>
-
-    <!-- Premium Package -->
-    <div class="package-card">
-      <h3>Premium Package</h3>
-      <div class="price">USD <span>$500</span></div>
-      <ul>
-        <li>✔ Up to 10 pages website</li>
-        <li>✔ E-commerce</li>
-        <li>✔ Custom Design</li>
-        <li>✔ Social Links</li>
-        <li>✔ Optimized Speed</li>
-        <li>✔ Blog</li>
-      </ul>
-      <a href="https://wa.me/923215811901" target="_blank" class="btn order-btn">Order Now</a>
-    </div>
-
-  </div>
-</section>
-    <div class="card">
-  <img src="project1.png" alt="">
-  <h3>E-commerce Website</h3>
-  <p>Built using HTML, CSS, JS</p>
-  
-  <a href="#">Live Demo</a>
-  <a href="#">GitHub</a>
-</div>
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>If you’d like to work together, feel free to reach out!</p>
-    <a href="https://wa.me/923215811901" target="_blank" class="btn whatsapp-btn">📱 WhatsApp Me</a>
-  </section>
-   <section class="testimonials">
-  <div class="card">
-    <p>"Amazing work! Highly professional."</p>
-    <h4>- simra</h4>
   </div>
 </section>
 
-<a href="https://wa.me/923215811901" class="whatsapp">
-  💬 Chat on WhatsApp
-</a>
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 MyPortfolio. All rights reserved.</p>
-  </footer>
+<footer>
+  <p>© 2025 Emaan Majid. Built with care. &nbsp;·&nbsp; <a href="https://github.com/emaanmajid226" target="_blank">GitHub</a></p>
+</footer>
 
-  <!-- Typed.js Script -->
-  <script>
-    var typed = new Typed("#typed", {
-      strings: ["I’m a Developer", "I’m a Designer", "I’m a Freelancer"],
-      typeSpeed: 70,
-      backSpeed: 50,
-      loop: true
-    });
-  </script>
 <script>
-// Animate progress bars and percentages
-function animateSkills() {
-  const skills = document.querySelectorAll(".progress");
-  const values = document.querySelectorAll(".skill-value");
-
-  skills.forEach((bar, index) => {
-    const value = bar.getAttribute("data-progress");
-    bar.style.width = value + "%";
-
-    let count = 0;
-    const target = parseInt(value);
-    const counter = setInterval(() => {
-      if (count >= target) {
-        clearInterval(counter);
-      } else {
-        count++;
-        values[index].innerText = count + "%";
+  const fills = document.querySelectorAll('.skill-fill');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        el.style.width = el.dataset.width + '%';
+        observer.unobserve(el);
       }
-    }, 20);
-  });
-}
-  <div class="skill">
-  <p>HTML</p>
-  <div class="bar"><span style="width: 90%"></span></div>
-</div>
-
-window.addEventListener("scroll", () => {
-  const section = document.querySelector(".skills");
-  const position = section.getBoundingClientRect().top;
-  const screenPos = window.innerHeight / 1.3;
-
-  if (position < screenPos) {
-    animateSkills();
-  }
-});
-  <section class="cta">
-  <h2>Have a project in mind?</h2>
-  <a href="#contact" class="btn">Let's Work Together</a>
-</section>
+    });
+  }, { threshold: 0.3 });
+  fills.forEach(f => observer.observe(f));
 </script>
-<button type="submit" class="btn">Send</button>
 
 </body>
 </html>
+
