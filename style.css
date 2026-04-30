@@ -580,3 +580,27 @@ body {
   padding: 12px;
   border-radius: 50px;
 }
+body {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+.hero {
+  background: #0f172a;
+  color: white;
+}
+
+nav {
+  background: #020617; /* darker */
+}
+h1, h2, h3, p, a {
+  color: #f1f5f9;
+}
+
+nav a {
+  color: white;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
